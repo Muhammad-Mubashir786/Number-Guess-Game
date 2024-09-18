@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+int main(){
+    bool ships[4][4]={
+        {0,1,1,0},
+        {0,1,0,0},
+        {0,0,0,0},
+        {1,0,0,0}
+};
+cout<<"Welcome to Ship hitting game"<<endl;
+int hits=0;
+int numberofTurns=0;
+while(hits<4){
+    int row,column;
+    cout<<"Enter the coordinates"<<endl;
+    cout<<"Enter the row 0-3"<<endl;
+    cin>>row;
+    cout<<"Enter the column 0-3"<<endl;
+    cin>>column;
+    if(ships[row][column]){
+        ships[row][column]=0;
+        hits++;
+        cout<<"Hit! "<<(4-hits)<<" left.\n";
+    }else{
+        cout<<"You missed the ship\n\n";
+    }
+    numberofTurns++;
+}
+cout<<"Victory!\n\n";
+cout<<"You Won in "<<numberofTurns<<" Turns";
+return 0;
+}
